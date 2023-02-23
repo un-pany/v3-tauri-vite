@@ -51,8 +51,15 @@
         "title": "v3-tauri-vite",
         "width": 800,
         "height": 600,
-        "resizable": true
+        "center": true,
+        "resizable": true,
+        "fullscreen": false
       }
-    ]
+    ],
+    "systemTray": {
+      "title": "V3 Tauri Vite",
+      "iconPath": "icons/v3.ico",
+      "iconAsTemplate": true
+    }
   }
 }

@@ -1,33 +1,15 @@
 import { defineConfig } from "vite"
 import { resolve } from "path"
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
 import vue from "@vitejs/plugin-vue"
-import UnoCSS from "unocss/vite"
-import vueJsx from "@vitejs/plugin-vue-jsx"
-import svgLoader from "vite-svg-loader"
 
 const isDebug = process.env.TAURI_DEBUG === "true"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  plugins: [vue()],
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   // prevent vite from obscuring rust errors
   clearScreen: true,
-  plugins: [
-    vue(),
-    vueJsx(),
-    /** 将 SVG 静态图转化为 Vue 组件 */
-    svgLoader(),
-    UnoCSS(),
-    /** SVG 插件 */
-    createSvgIconsPlugin({
-      // Specify the icon folder to be cached
-      iconDirs: [resolve(process.cwd(), "./src/icons/svg")],
-      // Specify symbolId format
-      symbolId: "icon-[dir]-[name]",
-      inject: "body-first"
-    })
-  ],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src") // 路径别名
@@ -37,22 +19,6 @@ export default defineConfig({
   server: {
     port: 1420,
     strictPort: true
-  },
-  css: {
-    postcss: {
-      plugins: [
-        {
-          postcssPlugin: "internal:charset-removal",
-          AtRule: {
-            charset: (atRule) => {
-              if (atRule.name === "charset") {
-                atRule.remove()
-              }
-            }
-          }
-        }
-      ]
-    }
   },
   // to make use of `TAURI_DEBUG` and other env variables
   // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand

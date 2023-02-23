@@ -18,11 +18,13 @@
 ## 🚀 开发
 
 ```bash
-
 # 配置
 1. 一键安装 .vscode 目录中推荐的插件
 2. node 版本 16+
 3. pnpm 版本 7.x
+
+# 克隆项目
+git clone https://github.com/nevlf/v3-tauri-vite.git
 
 # 进入项目目录
 cd v3-tauri-vite
@@ -50,6 +52,7 @@ pnpm lint
 
 - 若是无法下载 `wix311-binaries.zip`，则将 `libs/WixTools.zip` 解压后放在 `%USERPROFILE%\AppData\Local\tauri` 目录下，如下图所示
   ![](./libs/WixTools.png)
+- [单例插件](https://github.com/tauri-apps/tauri-plugin-single-instance)只支持 window、linux
 
 ```bash
 # 根据当前系统环境构建

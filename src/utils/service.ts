@@ -46,7 +46,7 @@ function createService() {
           break
         case 401:
           // Token 过期时，直接退出登录并强制刷新页面（会重定向到登录页）
-          useUserStoreHook().logout()
+          useUserStoreHook().doLogout()
           location.reload()
           break
         case 403:
