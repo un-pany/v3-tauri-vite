@@ -1,0 +1,58 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm vite:dev",
+    "beforeBuildCommand": "pnpm vite:build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "v3-tauri-vite",
+    "version": "../package.json"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "identifier": "com.tauri.app",
+      "longDescription": "",
+      "shortDescription": "",
+      "targets": "all",
+      "icon": ["icons/v3.ico", "icons/icon.ico", "icons/icon.icns"],
+      "resources": [],
+      "windows": {
+        "wix": {
+          "language": "zh-CN"
+        },
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      },
+      "macOS": {
+        "frameworks": [],
+        "signingIdentity": null,
+        "entitlements": null,
+        "exceptionDomain": "",
+        "providerShortName": null
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "title": "v3-tauri-vite",
+        "width": 800,
+        "height": 600,
+        "resizable": true
+      }
+    ]
+  }
+}
