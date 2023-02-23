@@ -4,7 +4,7 @@
 
 ## ⚡ 简介
 
-用前端技术构建一个更小、更快、更安全的桌面应用程序，基于 Tauri、Vue3、TypeScript、Element Plus、Pinia 和 Vite 等主流技术.
+用前端技术构建一个更小、更快、更安全的桌面应用程序，基于 Tauri、Vue3、TypeScript、Element Plus、Pinia 和 Vite 等主流技术
 
 - main 分支：源码来自[v3-admin-vite](https://github.com/un-pany/v3-admin-vite)
 - mini 分支：精简版，仅有登录页和主页
