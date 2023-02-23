@@ -1,6 +1,4 @@
-/** 统一处理 Cookie */
-
-import CacheKey from "@/constants/cacheKey"
+import CacheKey from "@/config/cache-key"
 
 export const getToken = () => {
   return sessionStorage.getItem(CacheKey.TOKEN)
